@@ -10,10 +10,7 @@ install:
   # - mkdir $TRAVIS_BUILD_DIR/config
 
 script: 
-  - docker run -it --rm >-
-      -e PYTEST_ADDOPTS="--color=yes"
-      otto-engine
-      bash -c "pytest -v --cov=ottoengine /app/tests/unit"
+  - docker run --rm otto-engine bash -c "pytest -v --color=yes --cov=ottoengine /app/tests/unit"
   # - docker run -d >-
   #     --name otto-engine
   #     -e PYTEST_ADDOPTS="--color=yes"
