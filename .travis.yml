@@ -13,7 +13,7 @@ script:
   - docker run --rm >-
       -e PYTEST_ADDOPTS="--color=yes"
       otto-engine
-      pytest -v --cov=ottoengine /app/tests/unit
+      bash -c "pytest -v --cov=ottoengine /app/tests/unit"
   - docker run -d >-
       --name otto-engine
       -e PYTEST_ADDOPTS="--color=yes"
@@ -23,7 +23,7 @@ script:
   - docker exec -it >-
       -e PYTEST_ADDOPTS="--color=yes"
       otto-engine
-      pytest -v /app/tests/integration
+      bash -c "pytest -v /app/tests/integration"
   - docker stop otto-engine
       
 
