@@ -1,4 +1,5 @@
 language: python
+python: 3.7
 
 services:
   - docker
@@ -17,7 +18,7 @@ script:
       --name otto-engine
       -e PYTEST_ADDOPTS="--color=yes"
       otto-engine
-      /app/tests/run_otto.py
+      /app/run_otto.py
   - sleep 1
   - docker exec -it >-
       -e PYTEST_ADDOPTS="--color=yes"
